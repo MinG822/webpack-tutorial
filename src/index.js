@@ -1,35 +1,17 @@
 import _ from 'lodash'
-import './style.css'
-import Icon from './abc.jpg'
-import Data from './data.xml'
-import Notes from './data.csv'
-import tomlData from './data.toml'
-import yamlData from './data.yaml'
-import jsonData from './data.json5'
-
-console.log(tomlData.title)
-console.log(tomlData.owner.name)
-
-console.log(yamlData.title)
-console.log(yamlData.owner.name)
-
-console.log(jsonData.title)
-console.log(jsonData.owner.name)
+import printMe from './print.js'
 
 function component() {
   const element = document.createElement('div')
+  const btn = document.createElement('button')
   
   element.innerHTML = _.join(['Hello', 'webpack'], ' ')
-  element.classList.add('hello')
 
-  const myIcon = new Image()
-  myIcon.src = Icon
+  btn.innerHTML = 'Click me and check the console!'
+  btn.onclick = printMe
 
-  element.appendChild(myIcon)
-
-  console.log(Data)
-  console.log(Notes)
-
+  element.appendChild(btn)
+  
   return element
 }
 
